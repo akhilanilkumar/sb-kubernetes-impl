@@ -1,0 +1,15 @@
+services:
+  myapp:
+    build: .
+    image: sb-k8s-app-img:1.0.0
+    container_name: sb-k8s-app-container
+    labels:
+      version: "1.0.0"
+    ports:
+      - "9090:8080"
+    networks:
+      - sb-k8s-network
+
+networks:
+  sb-k8s-network:
+    driver: bridge

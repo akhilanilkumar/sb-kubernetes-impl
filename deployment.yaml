@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sb-k8s-app
+  labels:
+    app: sb-k8s-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sb-k8s-app
+  template:
+    metadata:
+      name: sb-k8s-app
+      labels:
+        app: sb-k8s-app
+    spec:
+      containers:
+        - name: sb-k8s-app-container
+          image: sb-k8s-app-img:1.0.0
+          imagePullPolicy: Never
+      restartPolicy: Always
