@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: sb-k8s-app-container
-          image: sb-k8s-app-img:1.0.0
-          imagePullPolicy: Never
+          image: akhilanilkumar/sb-k8s-app-img:1.0.0
+          imagePullPolicy: IfNotPresent
       restartPolicy: Always
